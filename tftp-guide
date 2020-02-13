@@ -1,0 +1,15 @@
+sudo apt-get install openbsd-inetd tftpd tftp
+sudo gedit /etc/inetd.conf
+
+dgram	udp	wait	nobody	/usr/sbin/tcpd	/usr/sbin/in.tftpd /tftpboot -последняя dir - это тфтп корень
+
+sudo mkdir /tftpboot
+sudo chown -R nobody /tftpboot
+sudo /etc/init.d/openbsd-inetd restart
+
+
+проверка
+sudo apt-get install tftp
+echo This is my file > /tftpboot/myfile
+tftp 127.0.0.1
+tftp> get myfile
