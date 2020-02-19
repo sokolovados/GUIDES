@@ -1,0 +1,28 @@
+ wget http://dev.mysql.com/get/mysql57-community-release-el7-9.noarch.rpm
+sudo rpm -Uvh mysql57-community-release-el7-9.noarch.rpm
+ sudo yum install mysql-server
+ sudo systemctl start mysqld
+sudo grep 'temporary password' /var/log/mysqld.log
+
+просмотр и создание БД
+
+SHOW DATABASES
+CREATE DATABASE menagerie
+USE menagerie
+
+
+mysql -h host -u user -p menagerie
+___________________________________
+
+создание таблицы
+
+SHOW TABLES;
+CREATE TABLE test (
+name VARCHAR(20), owner VARCHAR(20),
+species VARCHAR(20), sex CHAR(1), birth DATE, death DATE
+); название: тип содержимого	
+
+DESCRIBE pet - просмотр типа таблицы и названия столбцов
+SELECT * FROM pet; - просмотр всей таблицы
+
+
