@@ -1,0 +1,12 @@
+cd ~
+git clone https://github.com/magicmonty/bash-git-prompt.git .bash-git-prompt --depth=1
+
+vim .bashrc
+GIT_PROMPT_ONLY_IN_REPO=1
+source ~/.bash-git-prompt/gitprompt.sh
+
+exec bash
+
+
+для начала работы с репой -
+git clone + ссылка с github
